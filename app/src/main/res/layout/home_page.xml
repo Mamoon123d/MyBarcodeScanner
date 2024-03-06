@@ -1,0 +1,255 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/sec_color">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/header"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingHorizontal="@dimen/x14"
+            android:paddingVertical="@dimen/x30"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/scan_img"
+                android:layout_width="@dimen/x60"
+                android:layout_height="@dimen/x60"
+                android:scaleType="fitXY"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@drawable/barcode_scanner" />
+
+            <TextView
+                android:id="@+id/greeting"
+                android:layout_width="@dimen/x0"
+                android:layout_height="wrap_content"
+                android:paddingHorizontal="@dimen/x14"
+                android:text="Hello"
+                android:textColor="@color/text_1"
+                android:textSize="@dimen/s16"
+                android:textStyle="normal"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/scan_img"
+                app:layout_constraintTop_toTopOf="@+id/scan_img" />
+
+            <TextView
+                android:id="@+id/title"
+                android:layout_width="@dimen/x0"
+                android:layout_height="wrap_content"
+                android:paddingHorizontal="@dimen/x14"
+                android:text="Scan to know"
+                android:textColor="@color/text_1"
+                android:textSize="@dimen/s28"
+                android:textStyle="normal"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/scan_img"
+                app:layout_constraintTop_toBottomOf="@+id/greeting" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/x0"
+            android:background="@drawable/bg_base"
+            android:paddingHorizontal="@dimen/x30"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/header">
+
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/qr_bt"
+                    android:background="@drawable/bg_tool"
+                    android:padding="@dimen/x20">
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:id="@+id/qr_img"
+                        android:layout_width="@dimen/x40"
+                        android:layout_height="@dimen/x40"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:srcCompat="@drawable/ic_qr_code"
+                        app:tint="@color/sec_color" />
+
+                    <TextView
+                        android:id="@+id/qr_title"
+                        android:layout_width="@dimen/x0"
+                        android:layout_height="wrap_content"
+                        android:paddingHorizontal="@dimen/x10"
+                        android:text="Scan QR-Code"
+                        android:textColor="@color/text_2"
+                        android:textSize="@dimen/s16"
+                        android:textStyle="bold"
+                        app:layout_constraintEnd_toStartOf="@+id/qr_arrow"
+                        app:layout_constraintStart_toEndOf="@+id/qr_img"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        android:id="@+id/qr_subtitle"
+                        android:layout_width="@dimen/x0"
+                        android:layout_height="wrap_content"
+                        android:paddingHorizontal="@dimen/x10"
+                        android:text="Scan All Type QR-Code"
+                        android:textColor="@color/text_3"
+                        android:textSize="@dimen/s14"
+                        app:layout_constraintEnd_toStartOf="@+id/qr_arrow"
+                        app:layout_constraintStart_toEndOf="@+id/qr_img"
+                        app:layout_constraintTop_toBottomOf="@+id/qr_title" />
+
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:id="@+id/qr_arrow"
+                        android:layout_width="@dimen/x30"
+                        android:layout_height="@dimen/x30"
+                        android:background="@drawable/bg_arrow"
+                        android:padding="@dimen/x4"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:srcCompat="@drawable/ic_arrow"
+                        app:tint="@color/sec_color" />
+
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/bar_bt"
+                    android:layout_marginTop="@dimen/x20"
+                    android:background="@drawable/bg_tool"
+                    android:padding="@dimen/x20">
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:id="@+id/bar_img"
+                        android:layout_width="@dimen/x40"
+                        android:layout_height="@dimen/x40"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:srcCompat="@drawable/ic_barcode"
+                        app:tint="@color/sec_color" />
+
+                    <TextView
+                        android:id="@+id/bar_title"
+                        android:layout_width="@dimen/x0"
+                        android:layout_height="wrap_content"
+                        android:paddingHorizontal="@dimen/x10"
+                        android:text="Scan BarCode"
+                        android:textColor="@color/text_2"
+                        android:textSize="@dimen/s16"
+                        android:textStyle="bold"
+                        app:layout_constraintEnd_toStartOf="@+id/bar_arrow"
+                        app:layout_constraintStart_toEndOf="@+id/bar_img"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        android:id="@+id/bar_subtitle"
+                        android:layout_width="@dimen/x0"
+                        android:layout_height="wrap_content"
+                        android:paddingHorizontal="@dimen/x10"
+                        android:text="Scan All Type BarCode"
+                        android:textColor="@color/text_3"
+                        android:textSize="@dimen/s14"
+                        app:layout_constraintEnd_toStartOf="@+id/bar_arrow"
+                        app:layout_constraintStart_toEndOf="@+id/bar_img"
+                        app:layout_constraintTop_toBottomOf="@+id/bar_title" />
+
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:id="@+id/bar_arrow"
+                        android:layout_width="@dimen/x30"
+                        android:layout_height="@dimen/x30"
+                        android:background="@drawable/bg_arrow"
+                        android:padding="@dimen/x4"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:srcCompat="@drawable/ic_arrow"
+                        app:tint="@color/sec_color" />
+
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/x20"
+                    android:id="@+id/auto_bt"
+                    android:background="@drawable/bg_tool"
+                    android:padding="@dimen/x20">
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:id="@+id/both_img"
+                        android:layout_width="@dimen/x40"
+                        android:layout_height="@dimen/x40"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:srcCompat="@drawable/ic_both_code"
+                        app:tint="@color/sec_color" />
+
+                    <TextView
+                        android:id="@+id/both_title"
+                        android:layout_width="@dimen/x0"
+                        android:layout_height="wrap_content"
+                        android:paddingHorizontal="@dimen/x10"
+                        android:text="Auto Detect"
+                        android:textColor="@color/text_2"
+                        android:textSize="@dimen/s16"
+                        android:textStyle="bold"
+                        app:layout_constraintEnd_toStartOf="@+id/both_arrow"
+                        app:layout_constraintStart_toEndOf="@+id/both_img"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        android:id="@+id/both_subtitle"
+                        android:layout_width="@dimen/x0"
+                        android:layout_height="wrap_content"
+                        android:paddingHorizontal="@dimen/x10"
+                        android:text="@string/scan_qr_code_barcode"
+                        android:textColor="@color/text_3"
+                        android:textSize="@dimen/s14"
+                        app:layout_constraintEnd_toStartOf="@+id/both_arrow"
+                        app:layout_constraintStart_toEndOf="@+id/both_img"
+                        app:layout_constraintTop_toBottomOf="@+id/both_title" />
+
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:id="@+id/both_arrow"
+                        android:layout_width="@dimen/x30"
+                        android:layout_height="@dimen/x30"
+                        android:background="@drawable/bg_arrow"
+                        android:padding="@dimen/x4"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:srcCompat="@drawable/ic_arrow"
+                        app:tint="@color/sec_color" />
+
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </androidx.appcompat.widget.LinearLayoutCompat>
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

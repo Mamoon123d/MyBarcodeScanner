@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">MyBarcodeScanner</string>
+    <string name="scan_qr_code_barcode"><![CDATA[Scan QR-Code & BarCode]]></string>
+</resources>

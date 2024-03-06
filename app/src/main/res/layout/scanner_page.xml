@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+
+        <androidx.camera.view.PreviewView
+            android:id="@+id/preview_view"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/back_bt"
+            android:layout_width="@dimen/x40"
+            android:layout_height="@dimen/x40"
+            android:layout_margin="@dimen/x20"
+            android:background="@drawable/bg_back"
+            android:padding="@dimen/x8"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/ic_back" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/flash_bt"
+            android:layout_width="@dimen/x40"
+            android:layout_height="@dimen/x40"
+            android:layout_margin="@dimen/x20"
+            android:background="@drawable/bg_back"
+            android:padding="@dimen/x8"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/ic_flash_1" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

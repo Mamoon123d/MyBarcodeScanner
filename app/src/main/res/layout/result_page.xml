@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/sec_color">
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/back_bt"
+            android:layout_width="@dimen/x40"
+            android:layout_height="@dimen/x40"
+            android:layout_margin="@dimen/x20"
+            android:background="@drawable/bg_back"
+            android:padding="@dimen/x8"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/ic_back" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/center_con"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:minHeight="@dimen/x100"
+            android:layout_marginHorizontal="@dimen/x20"
+            android:background="@drawable/bg_card"
+            android:padding="@dimen/x20"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <TextView
+                android:id="@+id/r_title"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Scanned Barcode"
+                android:textColor="@color/text_2"
+                android:textSize="@dimen/s18"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/r_output"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Decoded Text:"
+                android:textColor="@color/text_3"
+                android:textSize="@dimen/s16"
+                app:layout_constraintTop_toBottomOf="@+id/r_title" />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
