@@ -102,13 +102,7 @@ class BarCodeAnalyzer(
                                 Toast.LENGTH_SHORT
                             )
                                 .show()
-                            context.startActivity(Intent(context,ResultPage::class.java).putExtras(
-                                Bundle().apply {
-                                    putString(Constant.Scanner.RESULT,barcode.rawValue)
-                                }
-                            ))
-                            playVibrate()
-                            (context as Activity).finish()
+
                             // Update bounding rect
                             barcode.boundingBox?.let { rect ->
                                 barcodeBoxView.setRect(
@@ -117,6 +111,21 @@ class BarCodeAnalyzer(
                                     )
                                 )
                             }
+
+                            context.startActivity(Intent(context,ResultPage::class.java).apply {
+                                addFlags(Intent.FLAG_ACTIVITY_REORDER_TO_FRONT)
+                                putExtras(
+                                Bundle().apply {
+                                    putString(Constant.Scanner.RESULT,barcode.rawValue)
+                                }
+                            )})
+
+                            playVibrate()
+                            (context as Activity).finish()
+                            scanner.close()
+                            break
+
+
                         }
                     } else {
                         // Remove bounding rect

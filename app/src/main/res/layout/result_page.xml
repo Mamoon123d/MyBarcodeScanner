@@ -48,13 +48,28 @@
 
             <TextView
                 android:id="@+id/r_output"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_width="@dimen/x0"
+                android:layout_height="@dimen/x0"
+                android:autoLink="web"
+                android:linksClickable="true"
                 android:text="Decoded Text:"
                 android:textColor="@color/text_3"
+                android:textColorLink="#673AB7"
                 android:textSize="@dimen/s16"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/copy_bt"
+                app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/r_title" />
 
+            <androidx.appcompat.widget.AppCompatImageView
+                android:layout_width="@dimen/x30"
+                android:layout_height="@dimen/x30"
+                android:padding="@dimen/x4"
+                app:srcCompat="@drawable/ic_copy"
+                android:id="@+id/copy_bt"
+                app:layout_constraintTop_toBottomOf="@+id/r_title"
+                app:layout_constraintEnd_toEndOf="parent"
+                />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 
