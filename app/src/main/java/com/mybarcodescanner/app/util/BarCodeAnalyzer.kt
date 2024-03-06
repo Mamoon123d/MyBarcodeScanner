@@ -6,6 +6,7 @@ import android.content.Context
 import android.content.Intent
 import android.graphics.Rect
 import android.graphics.RectF
+import android.net.Uri
 import android.os.Build
 import android.os.Bundle
 import android.os.VibrationEffect
@@ -25,7 +26,8 @@ class BarCodeAnalyzer(
     private val barcodeBoxView: BarcodeBoxView,
     private val previewViewWidth: Float,
     private val previewViewHeight: Float,
-    private val type: Int
+    private val type: Int,
+   private val uriContent: Uri?
 ) : ImageAnalysis.Analyzer {
 
     /**
@@ -52,7 +54,10 @@ class BarCodeAnalyzer(
             scaleX = previewViewWidth / img.height.toFloat()
             scaleY = previewViewHeight / img.width.toFloat()
 
-            val inputImage = InputImage.fromMediaImage(img, image.imageInfo.rotationDegrees)
+            var inputImage = InputImage.fromMediaImage(img, image.imageInfo.rotationDegrees)
+            uriContent?.run {
+                inputImage=InputImage.fromFilePath(context,this)
+            }
 
             // Process image searching for barcodes
             val options = BarcodeScannerOptions.Builder().apply {

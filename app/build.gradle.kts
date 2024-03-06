@@ -57,6 +57,10 @@ dependencies {
     implementation("com.google.mlkit:barcode-scanning:17.2.0")
     implementation("com.google.android.gms:play-services-mlkit-barcode-scanning:18.3.0")
 
+    //image
+    implementation("com.vanniktech:android-image-cropper:4.3.3")
+    
+
     //cameraX
     val cameraVersion = "1.3.1"
     implementation("androidx.camera:camera-lifecycle:$cameraVersion")

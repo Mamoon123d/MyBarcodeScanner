@@ -37,5 +37,21 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:srcCompat="@drawable/ic_flash_1" />
+
+        <TextView
+            android:id="@+id/pick_img_bt"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/x20"
+            android:background="@drawable/bg_btn"
+            android:paddingVertical="@dimen/x10"
+            android:text="@string/import_from_gallery"
+            android:textAlignment="center"
+            android:textColor="@color/text_1"
+            android:textSize="@dimen/s16"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>
